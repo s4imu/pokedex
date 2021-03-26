@@ -7,11 +7,11 @@
         <input
           type="text"
           class="input column is-link is-outlined"
-          placeholder="Buscar Pokémon"
+          placeholder="Buscar pelo Nome"
           v-model="busca"
         />
         <button class="button is-normal is-warning" @click="buscar">
-          Buscar pelo Nome
+          Buscar
         </button>
       </div>
       <div v-for="(pokemon, index) in pokemonsFiltrados" :key="pokemon.url">
