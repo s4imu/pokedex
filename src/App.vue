@@ -11,7 +11,7 @@
           v-model="busca"
         />
         <button class="button is-normal is-warning" @click="buscar">
-          Buscar
+          Buscar pelo Nome
         </button>
       </div>
       <div v-for="(pokemon, index) in pokemonsFiltrados" :key="pokemon.url">

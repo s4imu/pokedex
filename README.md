@@ -1,5 +1,7 @@
-# pokedex
-Projeto de Pokedex utilizando Vue.js e a API pokeapi
+# Pokedex
+Projeto de Pokedex dos pokemons da 1ª geração utilizando Vue.js e a API pokeapi
+
+[Demonstração do Projeto](https://youthful-benz-1de215.netlify.app/)
 
 ## Project setup
 ```
