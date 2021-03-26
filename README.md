@@ -1,5 +1,5 @@
 # pokedex
-Projeto para seleção a vaga de Dev na Gyzu
+Projeto de Pokedex utilizando Vue.js e a API pokeapi
 
 ## Project setup
 ```

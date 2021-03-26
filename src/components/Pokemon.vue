@@ -52,6 +52,9 @@ export default {
 </script>
 
 <style>
+.card {
+  margin-top: 2%;
+}
 #pokemon {
   margin-top: 2%;
 }

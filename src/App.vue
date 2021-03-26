@@ -6,11 +6,13 @@
       <div id="busca" class="columns">
         <input
           type="text"
-          class="input column is-three-quarters"
+          class="input column is-link is-outlined"
           placeholder="Buscar Pokémon"
           v-model="busca"
         />
-        <button class="button is-normal" @click="buscar">Buscar</button>
+        <button class="button is-normal is-warning" @click="buscar">
+          Buscar
+        </button>
       </div>
       <div v-for="(pokemon, index) in pokemonsFiltrados" :key="pokemon.url">
         <Pokemon :name="pokemon.name" :url="pokemon.url" :num="index + 1" />
@@ -59,12 +61,12 @@ export default {
   
 <style>
 #app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
+  font-family: "Acme", sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
   color: #2c3e50;
-  margin-top: 60px;
+  background-color: #90ee90;
 }
 #busca {
   margin-top: 2%;
