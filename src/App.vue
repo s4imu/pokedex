@@ -1,7 +1,18 @@
 <template>
   <div id="app">
     <div class="column is-half is-offset-one-quarter">
-      <div v-for="(pokemon, index) in pokemons" :key="index">
+      <img src="./assets/Pokedex_logo.png" alt="" />
+      <br />
+      <div id="busca" class="columns">
+        <input
+          type="text"
+          class="input column is-three-quarters"
+          placeholder="Buscar Pokémon"
+          v-model="busca"
+        />
+        <button class="button is-normal" @click="buscar">Buscar</button>
+      </div>
+      <div v-for="(pokemon, index) in pokemonsFiltrados" :key="pokemon.url">
         <Pokemon :name="pokemon.name" :url="pokemon.url" :num="index + 1" />
       </div>
     </div>
@@ -16,6 +27,8 @@ export default {
   data() {
     return {
       pokemons: [],
+      pokemonsFiltrados: [],
+      busca: "",
     };
   },
   created: function () {
@@ -23,10 +36,23 @@ export default {
       .get("https://pokeapi.co/api/v2/pokemon?limit=151&offset=0")
       .then((res) => {
         this.pokemons = res.data.results;
+        this.pokemonsFiltrados = res.data.results;
       });
   },
   components: {
     Pokemon,
+  },
+  methods: {
+    buscar: function () {
+      this.pokemonsFiltrados = this.pokemons;
+      if (this.busca == "" || this.busca == " ") {
+        this.pokemonsFiltrados = this.pokemons;
+      } else {
+        this.pokemonsFiltrados = this.pokemons.filter(
+          (pokemon) => pokemon.name.indexOf(this.busca.toLowerCase()) != -1
+        );
+      }
+    },
   },
 };
 </script>
@@ -39,5 +65,8 @@ export default {
   text-align: center;
   color: #2c3e50;
   margin-top: 60px;
+}
+#busca {
+  margin-top: 2%;
 }
 </style>
